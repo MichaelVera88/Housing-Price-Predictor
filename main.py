@@ -5,7 +5,7 @@ from src.evaluate import evaluate_model
 
 data_path = "data/raw/house_prices_practice.csv"
 
-def main():
+def create_model():
     '''
     Main function:
         - Loads dataset into a Panda dataframe
@@ -37,6 +37,4 @@ def main():
     for key, value in evaluations.items():
         print(f"{key}: {value:.2f}")
 
-if __name__ == "__main__":
-
-    main()
+create_model()
