@@ -7,13 +7,14 @@ data_path = "data/raw/house_prices_practice.csv"
 
 def create_model():
     '''
-    Main function:
+    Create Model Function:
         - Loads dataset into a Panda dataframe
         - Preprocesses columns of dataframe into preprocessor pipeline
         - Trains model with processed dataframe and training datasets
         - Evaluates trained model with test datasets
         - Saves the trained model
     '''
+    
     df = load_dataset(data_path)
 
     num_columns = [
