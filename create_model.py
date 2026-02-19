@@ -1,7 +1,7 @@
 from src.loader import load_dataset
 from src.preprocessor import split_data, preprocess
 from src.trainer import train_lr_model, save_model
-from src.evaluate import evaluate_model
+from src.evaluator import evaluate_model
 
 data_path = "data/raw/house_prices_practice.csv"
 
@@ -39,3 +39,4 @@ def create_model():
         print(f"{key}: {value:.2f}")
 
 create_model()
+
