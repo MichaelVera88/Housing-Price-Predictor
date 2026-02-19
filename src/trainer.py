@@ -23,5 +23,6 @@ def save_model(model):
     
     :param model: Trained Model
     '''
-    path = "models/model.pkl"
+    path = "data/models/model.pkl"
+
     joblib.dump(model, path)
