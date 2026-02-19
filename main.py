@@ -32,4 +32,8 @@ def main():
     house_input_df = pd.DataFrame([house_input])
     estimation = lr_model.predict(house_input_df)
 
+
     print(f"House Price: ${estimation[0]:,.2f}")
+
+if __name__ == "__main__":
+    main()
