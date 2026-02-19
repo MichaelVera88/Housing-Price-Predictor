@@ -12,7 +12,7 @@ def split_data(dataframe, y_column):
     '''
 
     y = dataframe[y_column]
-    x = dataframe.drop(column=[y_column])
+    x = dataframe.drop(columns=[y_column])
 
     return train_test_split(x, y, test_size=0.2, random_state=42)
 
@@ -23,6 +23,7 @@ def preprocess(num_columns):
     :param num_features: Number features
     '''
     num_pipline = Pipeline(steps=[("scaler", StandardScaler())])
-    process = ColumnTransformer(transformers=("num", num_pipline, num_columns))
+    process = ColumnTransformer(transformers=[("num", num_pipline, num_columns)])
+
 
     return process
