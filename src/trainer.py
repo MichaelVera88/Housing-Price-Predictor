@@ -31,6 +31,8 @@ def train_rf_model(preprocessor, x_train_dataset, y_train_dataset):
     model_pipeline = Pipeline(steps=[("preprocessor", preprocessor), ("model", rf_model)])
     model_pipeline.fit(x_train_dataset, y_train_dataset)
 
+    return model_pipeline
+
 def save_model(model, path):
     '''
     Saves trained model to model.pkl file
@@ -38,3 +40,4 @@ def save_model(model, path):
     :param model: Trained Model
     '''
     joblib.dump(model, path)
+
