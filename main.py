@@ -27,15 +27,16 @@ def main():
         "LotArea"
     ]
 
-    x_train_dataset, y_train_dataset, x_test_dataset, y_test_dataset = split_data(df, "SalePrice")
+    x_train_dataset, x_test_dataset, y_train_dataset, y_test_dataset = split_data(df, "SalePrice")
     processed = preprocess(num_columns)
     trained_model = train_lr_model(processed, x_train_dataset, y_train_dataset)
     evaluations = evaluate_model(trained_model, x_test_dataset, y_test_dataset)
     save_model(trained_model)
 
-    print("Results")
+    print("Results:")
     for key, value in evaluations.items():
         print(f"{key}: {value:.2f}")
 
 if __name__ == "__main__":
+
     main()
