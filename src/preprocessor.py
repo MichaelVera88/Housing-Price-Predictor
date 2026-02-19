@@ -16,13 +16,13 @@ def split_data(dataframe, y_column):
 
     return train_test_split(x, y, test_size=0.2, random_state=42)
 
-def preprocess(num_features):
+def preprocess(num_columns):
     '''
     Pipeline for data that uses standard scaler and column transformer.
     
     :param num_features: Number features
     '''
     num_pipline = Pipeline(steps=[("scaler", StandardScaler())])
-    process = ColumnTransformer(transformers=("num", num_pipline, num_features))
+    process = ColumnTransformer(transformers=("num", num_pipline, num_columns))
 
     return process
